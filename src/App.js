@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaHeart, FaShare, FaEye, FaChevronLeft, FaBars } from 'react-icons/fa';
+import { FaHeart, FaShare, FaEye, FaChevronLeft, FaBars, FaChevronRight } from 'react-icons/fa';
 import './App.css';
 import Statue from "./images/statue.png";
 
@@ -83,7 +83,7 @@ function App() {
         {/* Open Sidebar Button Outside Sidebar */}
         {!sidebarOpen && (
           <button className="toggle-btn visible" onClick={toggleSidebar}>
-            <FaBars />
+            <FaChevronLeft />
           </button>
         )}
         
