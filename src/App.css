@@ -81,17 +81,19 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #e0e0e0;
+  background-color: #ded7d7;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   margin-bottom: 5px;
+  font-size: 20px;
+  
 }
 
 .stat-value {
-  font-size: 14px;
+  font-size: 15px;
   color: #333;
 }
 

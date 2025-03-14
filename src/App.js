@@ -1,8 +1,8 @@
-// src/App.js
 import React, { useState } from 'react';
-import { FaHeart, FaShare, FaEye, FaChevronLeft } from 'react-icons/fa';
+import { FaHeart, FaShare, FaEye, FaChevronLeft, FaBars } from 'react-icons/fa';
 import './App.css';
-import Statue from "./images/statue.png"
+import Statue from "./images/statue.png";
+
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
@@ -15,7 +15,8 @@ function App() {
       {/* Sidebar */}
       <div className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-content">
-          <button className="back-button">
+          {/* Close Button Inside Sidebar */}
+          <button className="back-button" onClick={toggleSidebar}>
             <FaChevronLeft />
           </button>
           
@@ -65,9 +66,9 @@ function App() {
               mentions, Maitreya Buddha will be born in Ketumati,
               in present-day Varanasi, Uttar Pradesh. As a
               bodhisattva, Maitreya wears a heavily adorned with
-              earrings, wristlets, necklaces, and an amulet. The
+              earrings, wristlets, necklaces, and an amulet.
             </p>
-            <a href="#" className="read-more">→ READ MORE</a>
+            <a className="read-more">→ READ MORE</a>
           </div>
           
           <div className="button-container">
@@ -79,15 +80,14 @@ function App() {
       
       {/* Main Content */}
       <div className="main-content">
-        <button 
-          className={`toggle-btn ${!sidebarOpen ? 'visible' : ''}`} 
-          onClick={toggleSidebar}
-        >
-          <FaChevronLeft />
-        </button>
+        {/* Open Sidebar Button Outside Sidebar */}
+        {!sidebarOpen && (
+          <button className="toggle-btn visible" onClick={toggleSidebar}>
+            <FaBars />
+          </button>
+        )}
         
         <div className="image-container">
-          {/* Grey background is applied via CSS */}
           <img 
             src={Statue}
             alt="Maitreya Buddha in Gesture of Fearlessness" 
